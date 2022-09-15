@@ -77,9 +77,9 @@
                   <Component id="jLabel2" min="-2" pref="372" max="-2" attributes="0"/>
                   <EmptySpace pref="15" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton2" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton3" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                      <Component id="jButton2" alignment="1" min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="jButton3" alignment="1" min="-2" pref="59" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
