@@ -16,12 +16,12 @@ public class librarianForm extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        newBooks = new javax.swing.JButton();
+        veiwBooks = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        IssueBooks = new javax.swing.JButton();
+        viewIssuedBooks = new javax.swing.JButton();
+        returnBooks = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -58,23 +58,23 @@ public class librarianForm extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(236, 236, 171));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Operation", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(0, 153, 255))); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(243, 243, 188));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/books.png"))); // NOI18N
-        jButton1.setText("New Books");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        newBooks.setBackground(new java.awt.Color(243, 243, 188));
+        newBooks.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        newBooks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/books.png"))); // NOI18N
+        newBooks.setText("New Books");
+        newBooks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                newBooksActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(243, 243, 188));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/viewBooks.png"))); // NOI18N
-        jButton2.setText("View Books");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        veiwBooks.setBackground(new java.awt.Color(243, 243, 188));
+        veiwBooks.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        veiwBooks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/viewBooks.png"))); // NOI18N
+        veiwBooks.setText("View Books");
+        veiwBooks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                veiwBooksActionPerformed(evt);
             }
         });
 
@@ -84,9 +84,9 @@ public class librarianForm extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jButton1)
+                .addComponent(newBooks)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(veiwBooks)
                 .addGap(28, 28, 28))
         );
         jPanel4Layout.setVerticalGroup(
@@ -94,41 +94,41 @@ public class librarianForm extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(newBooks)
+                    .addComponent(veiwBooks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(236, 236, 171));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Action", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(240, 182, 64))); // NOI18N
 
-        jButton3.setBackground(new java.awt.Color(243, 243, 188));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/issuedBook.jpg"))); // NOI18N
-        jButton3.setText("Issue Books ");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        IssueBooks.setBackground(new java.awt.Color(243, 243, 188));
+        IssueBooks.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        IssueBooks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/issuedBook.jpg"))); // NOI18N
+        IssueBooks.setText("Issue Books ");
+        IssueBooks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                IssueBooksActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(243, 243, 188));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/viewIssuedBooks.png"))); // NOI18N
-        jButton4.setText("View Issued Books");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        viewIssuedBooks.setBackground(new java.awt.Color(243, 243, 188));
+        viewIssuedBooks.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewIssuedBooks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/viewIssuedBooks.png"))); // NOI18N
+        viewIssuedBooks.setText("View Issued Books");
+        viewIssuedBooks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                viewIssuedBooksActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(243, 243, 188));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/returnBook-1.png"))); // NOI18N
-        jButton5.setText("Return Books");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        returnBooks.setBackground(new java.awt.Color(243, 243, 188));
+        returnBooks.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        returnBooks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/returnBook-1.png"))); // NOI18N
+        returnBooks.setText("Return Books");
+        returnBooks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                returnBooksActionPerformed(evt);
             }
         });
 
@@ -138,13 +138,13 @@ public class librarianForm extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(IssueBooks, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addComponent(returnBooks)
                 .addGap(28, 28, 28))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(viewIssuedBooks)
                 .addGap(180, 180, 180))
         );
         jPanel3Layout.setVerticalGroup(
@@ -152,10 +152,10 @@ public class librarianForm extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton5))
+                    .addComponent(IssueBooks)
+                    .addComponent(returnBooks))
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(viewIssuedBooks)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -223,36 +223,36 @@ public class librarianForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void newBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newBooksActionPerformed
         // TODO add your handling code here:
         addBook s = new addBook();
         s.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_newBooksActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void veiwBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veiwBooksActionPerformed
         // TODO add your handling code here:
         //this.dispose();
         viewBooks s = new viewBooks();
         s.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_veiwBooksActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void IssueBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IssueBooksActionPerformed
         // TODO add your handling code here:
         issueBook s = new issueBook();
         s.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_IssueBooksActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void viewIssuedBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewIssuedBooksActionPerformed
         // TODO add your handling code here:
         viewIssuedBooks s = new viewIssuedBooks();
         s.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_viewIssuedBooksActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void returnBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnBooksActionPerformed
         // TODO add your handling code here:
         returnBook s = new returnBook();
         s.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_returnBooksActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
@@ -292,11 +292,7 @@ public class librarianForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton IssueBooks;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -308,5 +304,9 @@ public class librarianForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JButton newBooks;
+    private javax.swing.JButton returnBooks;
+    private javax.swing.JButton veiwBooks;
+    private javax.swing.JButton viewIssuedBooks;
     // End of variables declaration//GEN-END:variables
 }

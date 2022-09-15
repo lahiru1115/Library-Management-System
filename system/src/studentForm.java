@@ -33,7 +33,7 @@ public class studentForm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         author = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        searchByBook = new javax.swing.JButton();
         bookname = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         bookno = new javax.swing.JTextField();
@@ -46,12 +46,12 @@ public class studentForm extends javax.swing.JFrame {
         bname = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         availablity = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        check = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         datetobeissue = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        searchByAuthor = new javax.swing.JButton();
         bookname1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -88,13 +88,13 @@ public class studentForm extends javax.swing.JFrame {
 
         author.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 153));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/searchByBook.jpg"))); // NOI18N
-        jButton1.setText("search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        searchByBook.setBackground(new java.awt.Color(255, 255, 153));
+        searchByBook.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        searchByBook.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/searchByBook.jpg"))); // NOI18N
+        searchByBook.setText("search");
+        searchByBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                searchByBookActionPerformed(evt);
             }
         });
 
@@ -123,7 +123,7 @@ public class studentForm extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(jButton1))
+                        .addComponent(searchByBook))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -164,7 +164,7 @@ public class studentForm extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1))
+                .addComponent(searchByBook))
         );
 
         jPanel3.setBackground(new java.awt.Color(236, 236, 171));
@@ -180,13 +180,13 @@ public class studentForm extends javax.swing.JFrame {
 
         availablity.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 153));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/checkAvailability.png"))); // NOI18N
-        jButton3.setText("Check");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        check.setBackground(new java.awt.Color(255, 255, 153));
+        check.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        check.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/checkAvailability.png"))); // NOI18N
+        check.setText("Check");
+        check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                checkActionPerformed(evt);
             }
         });
 
@@ -217,7 +217,7 @@ public class studentForm extends javax.swing.JFrame {
                 .addGap(2, 2, 2))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jButton3)
+                .addComponent(check)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -228,7 +228,7 @@ public class studentForm extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(bname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(check)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -246,13 +246,13 @@ public class studentForm extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Author");
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 153));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/searchByAuthor.jpg"))); // NOI18N
-        jButton2.setText("search");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        searchByAuthor.setBackground(new java.awt.Color(255, 255, 153));
+        searchByAuthor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        searchByAuthor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/searchByAuthor.jpg"))); // NOI18N
+        searchByAuthor.setText("search");
+        searchByAuthor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                searchByAuthorActionPerformed(evt);
             }
         });
 
@@ -279,7 +279,7 @@ public class studentForm extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(searchByAuthor)
                 .addGap(51, 51, 51))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -300,7 +300,7 @@ public class studentForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2))
+                .addComponent(searchByAuthor))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -369,7 +369,7 @@ public class studentForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void searchByBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchByBookActionPerformed
         // TODO add your handling code here:
         try {
             con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
@@ -401,9 +401,9 @@ public class studentForm extends javax.swing.JFrame {
             }
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_searchByBookActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void searchByAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchByAuthorActionPerformed
         // TODO add your handling code here:
         try {
             con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
@@ -428,9 +428,9 @@ public class studentForm extends javax.swing.JFrame {
             } catch (Exception e) {
             }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_searchByAuthorActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
         // TODO add your handling code here:
         try {
             con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
@@ -459,7 +459,7 @@ public class studentForm extends javax.swing.JFrame {
             } catch (Exception e) {
             }
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_checkActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
@@ -505,10 +505,8 @@ public class studentForm extends javax.swing.JFrame {
     private javax.swing.JTextField bookname;
     private javax.swing.JTextField bookname1;
     private javax.swing.JTextField bookno;
+    private javax.swing.JButton check;
     private javax.swing.JTextField datetobeissue;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -534,5 +532,7 @@ public class studentForm extends javax.swing.JFrame {
     private javax.swing.JLabel jlable;
     private javax.swing.JTextField pages;
     private javax.swing.JTextField price;
+    private javax.swing.JButton searchByAuthor;
+    private javax.swing.JButton searchByBook;
     // End of variables declaration//GEN-END:variables
 }
