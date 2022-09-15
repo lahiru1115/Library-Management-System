@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `rad_lms`
+-- Database: `rad_library`
 --
 
 -- --------------------------------------------------------
@@ -27,6 +27,9 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `admin`
 --
+
+DROP DATABASE IF EXISTS rad_library;
+CREATE DATABASE rad_library;
 
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
