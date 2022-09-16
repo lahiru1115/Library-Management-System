@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 16, 2022 at 02:35 AM
+-- Generation Time: Sep 16, 2022 at 05:35 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -41,43 +41,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `username`, `password`) VALUES
-(1, 'Admin', 'Admin', 'Admin'),
-(2, 'Admin2', '', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `all_books`
---
-
-DROP TABLE IF EXISTS `all_books`;
-CREATE TABLE IF NOT EXISTS `all_books` (
-  `bookno` int(11) NOT NULL,
-  `bookname` varchar(255) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `pages` int(11) NOT NULL,
-  `price` float NOT NULL,
-  PRIMARY KEY (`bookno`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `all_books`
---
-
-INSERT INTO `all_books` (`bookno`, `bookname`, `author`, `pages`, `price`) VALUES
-(2, 'c#', 'james', 250, 2500),
-(1, 'java ', 'abcd', 250, 1000),
-(3, 'c++', 'abcd', 20, 2000),
-(4, 'python', 'james', 500, 3500),
-(5, 'web development', 'abc', 56, 500),
-(6, 'java 2', 'sandul', 20, 100),
-(7, 'java 3', 'John', 50, 500),
-(10, 'java 3', 'john', 50, 500),
-(20, 'java 4', 'james', 540, 5000),
-(50, 'c# 5', 'nihal perera', 400, 500),
-(100, 'java book 1', 'kaamal', 525, 1000),
-(56, 'dfgd', 'dffg', 56, 200),
-(234, '2erwe', 'werwer', 34, 234);
+(1, 'Admin', 'admin', '1234');
 
 -- --------------------------------------------------------
 
@@ -100,12 +64,42 @@ CREATE TABLE IF NOT EXISTS `assistant_librarian` (
 --
 
 INSERT INTO `assistant_librarian` (`id`, `fname`, `lname`, `username`, `password`) VALUES
-(1, '123', '123', 'sandul', 'sandul'),
-(55555, '123', '123', '4', '4'),
-(8979, '123', '123', '45', '67'),
-(5678678, '123', '123', '657', '567'),
-(56, '56456456', '324234terter', '34234retert', '324234rtert'),
-(43534535, '345344535', '3453453', '3453535', '3453535');
+(1, 'asd', 'fgh', 'asslib', '1234');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+DROP TABLE IF EXISTS `books`;
+CREATE TABLE IF NOT EXISTS `books` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `edition` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`id`, `name`, `author`, `subject`, `edition`) VALUES
+(2, 'c#', 'james', '250', 2500),
+(1, 'java ', 'abcd', '250', 1000),
+(3, 'c++', 'abcd', '20', 2000),
+(4, 'python', 'james', '500', 3500),
+(5, 'web development', 'abc', '56', 500),
+(7, 'java 3', 'John', '50', 500),
+(10, 'java 3', 'john', '50', 500),
+(20, 'java 4', 'james', '540', 5000),
+(50, 'c# 5', 'nihal perera', '400', 500),
+(100, 'java book 1', 'kaamal', '525', 1000),
+(56, 'dfgd', 'dffg', '56', 200),
+(234, '2erwe', 'werwer', '34', 234),
+(4535, '45345', '45345', '435345', 435345);
 
 -- --------------------------------------------------------
 
@@ -149,11 +143,7 @@ CREATE TABLE IF NOT EXISTS `librarian` (
 --
 
 INSERT INTO `librarian` (`id`, `fname`, `lname`, `username`, `password`) VALUES
-(1, '123', '123', 'sandul', 'sandul'),
-(55555, '123', '123', '4', '4'),
-(5678678, '123', '123', '657', '567'),
-(234, 'df', 'df', 'df', 'df'),
-(345345, '345353', '34535', '3453453', '3453535');
+(1, 'asd', 'fgh', 'lib', '1234');
 
 -- --------------------------------------------------------
 
@@ -176,12 +166,7 @@ CREATE TABLE IF NOT EXISTS `registrar` (
 --
 
 INSERT INTO `registrar` (`id`, `fname`, `lname`, `username`, `password`) VALUES
-(1, '123', '123', 'sandul', 'sandul'),
-(55555, '123', '123', '4', '4'),
-(8979, '123', '123', '45', '67'),
-(5678678, '123', '123', '657', '567'),
-(43534535, '345344535', '3453453', '3453535', '3453535'),
-(67567, '567567', '567567', '567567', '567567');
+(1, 'asd', 'fgh', 'reg', '1234');
 
 -- --------------------------------------------------------
 
