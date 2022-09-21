@@ -1,5 +1,18 @@
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
+
 public class Home extends javax.swing.JFrame {
+    
+    Connection con = null;
+    Statement st = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
 
     public Home() {
         initComponents(); // a method that netBeans swing designer creates to initialise components
@@ -147,10 +160,21 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
-        adminLogin form = new adminLogin();
+        
+        
+        try {
+            adminLogin form = new adminLogin();
         form.setVisible(true); // makes the frame appear on the screen
         form.pack(); // a method sizes the frame so that all its contents are at or above their preferred sizes
         form.setLocationRelativeTo(null); // sets the location of the window relative to the specified component
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            pst = con.prepareStatement("SELECT * FROM librarian");
+            rs = pst.executeQuery();
+            adminForm.class.
+            lib_table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
     }//GEN-LAST:event_adminActionPerformed
       
     private void librarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_librarianActionPerformed

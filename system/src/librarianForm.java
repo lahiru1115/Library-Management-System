@@ -304,7 +304,7 @@ public class librarianForm extends javax.swing.JFrame {
             pst.setString(3, author);
             pst.setString(4, subject);
             pst.setString(5, edition);
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Registration Success");
 
