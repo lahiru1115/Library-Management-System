@@ -151,7 +151,7 @@ public class viewReturnedBooks extends javax.swing.JFrame {
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
         // TODO add your handling code here:
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT * FROM  return_books");
             rs = pst.executeQuery();
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));

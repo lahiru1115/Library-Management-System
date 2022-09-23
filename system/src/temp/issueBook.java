@@ -350,7 +350,7 @@ public class issueBook extends javax.swing.JFrame {
             String doi = dateofissue.getText();
             String dor = dateofreturn.getText();
             Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("insert into issue_books(bookno,book_name,author,price,pages,student_no,student_name,date_of_issue,date_to_be_return,availability)values(?,?,?,?,?,?,?,?,?,?)");
             pst.setString(1, bno);
             pst.setString(2, bname);
@@ -383,7 +383,7 @@ public class issueBook extends javax.swing.JFrame {
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT * FROM  all_books where bookno=?");
             pst.setString(1, bookno.getText());
             rs = pst.executeQuery();

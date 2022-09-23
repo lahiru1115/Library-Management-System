@@ -232,7 +232,7 @@ public class addBook extends javax.swing.JFrame {
             String page = pages.getText();
             String bprice = price.getText();
             Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("insert into all_books(bookno,bookname,author,pages,price)values(?,?,?,?,?)");
             pst.setString(1, bno);
             pst.setString(2, bname);

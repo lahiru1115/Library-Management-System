@@ -317,7 +317,7 @@ public class returnBook extends javax.swing.JFrame {
     }//GEN-LAST:event_rtnActionPerformed
     public void delete() {
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("delete  from issue_books where  bookno=?");
             pst.setString(1, bookno.getText());
             pst.execute();
@@ -338,7 +338,7 @@ public class returnBook extends javax.swing.JFrame {
             String doi = dateofissue.getText();
             String dor = datetobereturn.getText();
             Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("insert into return_books(bookno,book_name,author,price,pages,student_no,student_name,date_of_issue,date_to_be_return)values(?,?,?,?,?,?,?,?,?)");
             pst.setString(1, bno);
             pst.setString(2, bname);
@@ -369,7 +369,7 @@ public class returnBook extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT * FROM  issue_books where bookno=?");
             pst.setString(1, bookno.getText());
             rs = pst.executeQuery();

@@ -7,7 +7,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
-public class studentForm extends javax.swing.JFrame {
+public class studentForm1 extends javax.swing.JFrame {
 
     Connection con = null;
     Statement st = null;
@@ -15,7 +15,7 @@ public class studentForm extends javax.swing.JFrame {
     PreparedStatement pst1 = null;
     ResultSet rs = null;
 
-    public studentForm() {
+    public studentForm1() {
         initComponents();
     }
 
@@ -372,7 +372,7 @@ public class studentForm extends javax.swing.JFrame {
     private void searchByBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchByBookActionPerformed
         // TODO add your handling code here:
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT * FROM all_books where bookname=?");
             //pst = con.prepareStatement(sql);
             pst.setString(1, bookname.getText());
@@ -406,7 +406,7 @@ public class studentForm extends javax.swing.JFrame {
     private void searchByAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchByAuthorActionPerformed
         // TODO add your handling code here:
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT bookname FROM  all_books where author=?");
             pst.setString(1, bookname1.getText());
             rs = pst.executeQuery();
@@ -433,7 +433,7 @@ public class studentForm extends javax.swing.JFrame {
     private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
         // TODO add your handling code here:
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT book_name,availability,date_to_be_return FROM  issue_books where book_name=?");
             pst.setString(1, bname.getText());
             rs = pst.executeQuery();

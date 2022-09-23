@@ -146,7 +146,7 @@ public class viewIssuedBooks extends javax.swing.JFrame {
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
         // TODO add your handling code here:
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT bookno,book_name,author,price,pages,student_no,student_name,date_of_issue,date_to_be_return FROM issue_books");
             //pst.setString(1,sno.getText());
             rs = pst.executeQuery();

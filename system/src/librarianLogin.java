@@ -140,15 +140,13 @@ public class librarianLogin extends javax.swing.JFrame {
                 st.setString(2, Password);
                 rs = st.executeQuery(); // runs the given SQL statement 
                 if (rs.next()) {
-                    // show a librarian form
-                    librarianForm form = new librarianForm();
-                    System.out.println("Go");
+                    librarianForm form = new librarianForm(); // show a librarian form
                     form.setVisible(true);
                     form.pack();
                     form.setLocationRelativeTo(null);
-                    this.dispose(); // close the current form (librarian login)
+                    this.dispose(); // close the current form (Librarian login)
                 } else {
-                    JOptionPane.showMessageDialog(null, "Invalid username or password", "Login error", 2); // rrror message
+                    JOptionPane.showMessageDialog(null, "Invalid username or password", "Login error", 2); // error message
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(librarianLogin.class.getName()).log(Level.SEVERE, null, ex);

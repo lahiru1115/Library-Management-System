@@ -1,4 +1,5 @@
 
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -218,7 +219,7 @@ public class adminForm extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
@@ -239,13 +240,14 @@ public class adminForm extends javax.swing.JFrame {
                             .addComponent(lib_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8)
                             .addComponent(lib_update))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(39, 39, 39)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lib_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)
-                            .addComponent(lib_delete)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                            .addComponent(lib_delete))
+                        .addGap(0, 9, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Assistant Librarian", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(0, 150, 200))); // NOI18N
@@ -372,7 +374,7 @@ public class adminForm extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
@@ -393,13 +395,14 @@ public class adminForm extends javax.swing.JFrame {
                             .addComponent(assLib_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12)
                             .addComponent(assLib_update))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(39, 39, 39)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(assLib_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13)
-                            .addComponent(assLib_delete)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                            .addComponent(assLib_delete))
+                        .addGap(0, 9, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -472,7 +475,7 @@ public class adminForm extends javax.swing.JFrame {
             String pword = lib_password.getText();
 
             Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("INSERT INTO librarian (id,fname,lname,username,password) values (?,?,?,?,?)");
 
             pst.setString(1, id);
@@ -489,9 +492,7 @@ public class adminForm extends javax.swing.JFrame {
             lib_lname.setText("");
             lib_username.setText("");
             lib_password.setText("");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(adminForm.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(adminForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_lib_addActionPerformed
@@ -499,11 +500,11 @@ public class adminForm extends javax.swing.JFrame {
     // librarian view
     private void lib_viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lib_viewActionPerformed
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT * FROM librarian");
             rs = pst.executeQuery();
             lib_table.setModel(DbUtils.resultSetToTableModel(rs));
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
     }//GEN-LAST:event_lib_viewActionPerformed
@@ -516,11 +517,11 @@ public class adminForm extends javax.swing.JFrame {
             String value3 = lib_lname.getText();
             String value4 = lib_username.getText();
             String value5 = lib_password.getText();
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("UPDATE librarian SET fname='" + value2 + "',lname='" + value3 + "',username='" + value4 + "',password='" + value5 + "' WHERE id='" + value1 + "'");
             pst.execute();
             JOptionPane.showMessageDialog(null, "Updated");
-        } catch (Exception ex) {
+        } catch (HeadlessException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
     }//GEN-LAST:event_lib_updateActionPerformed
@@ -528,7 +529,7 @@ public class adminForm extends javax.swing.JFrame {
     // librarian search
     private void lib_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lib_searchActionPerformed
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT * FROM librarian where id=?");
             pst.setString(1, lib_id.getText());
             rs = pst.executeQuery();
@@ -548,13 +549,13 @@ public class adminForm extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "User is not available");
             }
-        } catch (Exception e) {
+        } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, e);
         } finally {
             try {
                 rs.close();
                 pst.close();
-            } catch (Exception e) {
+            } catch (SQLException e) {
             }
         }
     }//GEN-LAST:event_lib_searchActionPerformed
@@ -574,7 +575,7 @@ public class adminForm extends javax.swing.JFrame {
             String pword = assLib_password.getText();
 
             Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("INSERT INTO assistant_librarian (id,fname,lname,username,password) values (?,?,?,?,?)");
 
             pst.setString(1, id);
@@ -591,9 +592,7 @@ public class adminForm extends javax.swing.JFrame {
             assLib_lname.setText("");
             assLib_username.setText("");
             assLib_password.setText("");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(adminForm.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(adminForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_assLib_addActionPerformed
@@ -601,11 +600,11 @@ public class adminForm extends javax.swing.JFrame {
     // assistant_librarian view
     private void assLib_viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assLib_viewActionPerformed
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT * FROM assistant_librarian");
             rs = pst.executeQuery();
             assLib_table.setModel(DbUtils.resultSetToTableModel(rs));
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
     }//GEN-LAST:event_assLib_viewActionPerformed
@@ -631,11 +630,11 @@ public class adminForm extends javax.swing.JFrame {
             String value3 = assLib_lname.getText();
             String value4 = assLib_username.getText();
             String value5 = assLib_password.getText();
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("UPDATE assistant_librarian SET fname='" + value2 + "',lname='" + value3 + "',username='" + value4 + "',password='" + value5 + "' WHERE id='" + value1 + "'");
             pst.execute();
             JOptionPane.showMessageDialog(null, "Updated");
-        } catch (Exception ex) {
+        } catch (HeadlessException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
     }//GEN-LAST:event_assLib_updateActionPerformed
@@ -643,7 +642,7 @@ public class adminForm extends javax.swing.JFrame {
     // assistant_librarian search
     private void assLib_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assLib_searchActionPerformed
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT * FROM assistant_librarian where id=?");
             pst.setString(1, assLib_id.getText());
             rs = pst.executeQuery();
@@ -663,13 +662,13 @@ public class adminForm extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "User is not available");
             }
-        } catch (Exception e) {
+        } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, e);
         } finally {
             try {
                 rs.close();
                 pst.close();
-            } catch (Exception e) {
+            } catch (SQLException e) {
             }
         }
     }//GEN-LAST:event_assLib_searchActionPerformed

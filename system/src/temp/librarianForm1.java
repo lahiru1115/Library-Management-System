@@ -1,7 +1,7 @@
 
-public class librarianForm extends javax.swing.JFrame {
+public class librarianForm1 extends javax.swing.JFrame {
 
-    public librarianForm() {
+    public librarianForm1() {
         initComponents();
     }
 

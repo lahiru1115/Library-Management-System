@@ -140,14 +140,13 @@ public class registrarLogin extends javax.swing.JFrame {
                 st.setString(2, Password);
                 rs = st.executeQuery(); // runs the given SQL statement 
                 if (rs.next()) {
-                    // show a registrar form
-                    registrarFrom form = new registrarFrom();
+                    registrarFrom form = new registrarFrom(); // show a registrar form
                     form.setVisible(true);
                     form.pack();
                     form.setLocationRelativeTo(null);
                     this.dispose(); // close the current form (Registrar login)
                 } else {
-                    JOptionPane.showMessageDialog(null, "Invalid username or password", "Login error", 2); // rrror message
+                    JOptionPane.showMessageDialog(null, "Invalid username or password", "Login error", 2); // error message
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(registrarLogin.class.getName()).log(Level.SEVERE, null, ex);

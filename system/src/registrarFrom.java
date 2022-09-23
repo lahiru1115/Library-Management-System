@@ -76,7 +76,7 @@ public class registrarFrom extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Librarian", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(0, 150, 200))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Student", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(0, 150, 200))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Id");
@@ -247,9 +247,10 @@ public class registrarFrom extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(reg_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)
-                            .addComponent(reg_delete)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                            .addComponent(reg_delete))
+                        .addGap(0, 363, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -318,7 +319,7 @@ public class registrarFrom extends javax.swing.JFrame {
             String pword = reg_password.getText();
 
             Class.forName("com.mysql.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("INSERT INTO registrar (id,fname,lname,username,password) values (?,?,?,?,?)");
 
             pst.setString(1, id);
@@ -345,7 +346,7 @@ public class registrarFrom extends javax.swing.JFrame {
     // registrar view
     private void reg_viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reg_viewActionPerformed
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT * FROM registrar");
             rs = pst.executeQuery();
             jTable.setModel(DbUtils.resultSetToTableModel(rs));
@@ -362,7 +363,7 @@ public class registrarFrom extends javax.swing.JFrame {
             String value3 = reg_lname.getText();
             String value4 = reg_username.getText();
             String value5 = reg_password.getText();
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("UPDATE registrar SET fname='" + value2 + "',lname='" + value3 + "',username='" + value4 + "',password='" + value5 + "' WHERE id='" + value1 + "'");
             pst.execute();
             JOptionPane.showMessageDialog(null, "Updated");
@@ -374,7 +375,7 @@ public class registrarFrom extends javax.swing.JFrame {
     // registrar search
     private void reg_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reg_searchActionPerformed
         try {
-            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library", "root", "");
+            con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/rad_library_old", "root", "");
             pst = con.prepareStatement("SELECT * FROM registrar where id=?");
             pst.setString(1, reg_id.getText());
             rs = pst.executeQuery();
