@@ -52,7 +52,7 @@ To set up the Library Management System, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/lahiru1115/Library-Management-System-v1.git
+   git clone https://github.com/lahiru1115/Library-Management-System.git
    ```
 
 2. Make sure you have Java and MySQL installed on your machine.
@@ -112,4 +112,4 @@ For any inquiries or support regarding Library Management System, please reach o
 - Name: [Lahiru Dissanayake](https://github.com/lahiru1115)
 - Email: [lahirudissanayake15@gmail.com](mailto:lahirudissanayake15@gmail.com)
 
-Feel free to report any issues or suggest enhancements via the [issue tracker](https://github.com/lahiru1115/Library-Management-System-v1/issues).
+Feel free to report any issues or suggest enhancements via the [issue tracker](https://github.com/lahiru1115/Library-Management-System/issues).
