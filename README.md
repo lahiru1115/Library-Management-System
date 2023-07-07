@@ -29,7 +29,7 @@ The Library Management System supports the following user roles:
 
 ### Assistant Librarian
 
-- **Handle Pending Requests**: Assistant librarians can view, search, issue, and cancel pending book requests from students.
+- **Handle Pending Requests**: Assistant librarians can view, search, issue, and cancel pending book requests.
 - **Manage Issued Books**: Assistant librarians can view, search, and handle book returns.
 
 ### Student
@@ -88,11 +88,7 @@ Use the following login credentials to access different user roles:
   - **Password**: 1234 <br> <br>
   - **Username**: ravindu
   - **Password**: 1234 <br> <br>
-  - **Username**: nishan
-  - **Password**: 1234 <br> <br>
   - **Username**: dinethi
-  - **Password**: 1234 <br> <br>
-  - **Username**: kivi
   - **Password**: 1234
 
 ## Contributing
