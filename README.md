@@ -107,7 +107,7 @@ Contributions to the Library Management System are welcome! If you'd like to con
 
 ## Contact
 
-For any inquiries or support regarding E-FINE, please reach out to the project maintainer:
+For any inquiries or support regarding Library Management System, please reach out to the project maintainer:
 
 - Name: [Lahiru Dissanayake](https://github.com/lahiru1115)
 - Email: [lahirudissanayake15@gmail.com](mailto:lahirudissanayake15@gmail.com)
