@@ -67,23 +67,23 @@ To set up the Library Management System, follow these steps:
 
 Use the following login credentials to access different user roles:
 
-- **Admin Login Credentials**
+- **Admin**
   - **Username**: admin
   - **Password**: 1234
 
-- **Registrar Login Credentials**
+- **Registrar**
   - **Username**: reg
   - **Password**: 1234
 
-- **Librarian Login Credentials**
+- **Librarian**
   - **Username**: lib
   - **Password**: 1234
 
-- **Assistant Librarian Login Credentials**
+- **Assistant Librarian**
   - **Username**: assis
   - **Password**: 1234
 
-- **Student Login Credentials**
+- **Student**
   - **Username**: lahiru
   - **Password**: 1234 <br> <br>
   - **Username**: ravindu
