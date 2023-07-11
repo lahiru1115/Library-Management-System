@@ -1,5 +1,7 @@
 # Library Management System
 
+![Cover Photo](system/src/images/screenshots/Header.png)
+
 The Library Management System is a comprehensive software solution designed to automate and streamline the management of a library. It provides different user roles with specific features and functionalities to efficiently handle various library operations.
 
 ## User Roles
@@ -90,6 +92,40 @@ Use the following login credentials to access different user roles:
   - **Password**: 1234 <br> <br>
   - **Username**: dinethi
   - **Password**: 1234
+
+## Screenshots
+
+<table>
+  <tr>
+    <td colspan="2">
+      <img src="system/src/images/screenshots/Screenshot-1.png" alt="Screenshot 1">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="system/src/images/screenshots/Screenshot-2.png" alt="Screenshot 2">
+    </td>
+    <td>
+      <img src="system/src/images/screenshots/Screenshot-3.png" alt="Screenshot 3">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="system/src/images/screenshots/Screenshot-4.png" alt="Screenshot 4">
+    </td>
+    <td>
+      <img src="system/src/images/screenshots/Screenshot-5.png" alt="Screenshot 5">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="system/src/images/screenshots/Screenshot-6.png" alt="Screenshot 6">
+    </td>
+    <td>
+      <img src="system/src/images/screenshots/Screenshot-7.png" alt="Screenshot 7">
+    </td>
+  </tr>
+</table>
 
 ## Contributing
 
